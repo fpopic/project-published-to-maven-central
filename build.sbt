@@ -22,7 +22,7 @@ developers := List(
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
+credentials += Credentials(Path.userHome / ".sbt" / "sonatype.credentials")
 
 publishMavenStyle := true
 
@@ -34,4 +34,4 @@ publishTo := Some(
 )
 
 useGpg := true
-pgpReadOnly := false
+pgpReadOnly := true
