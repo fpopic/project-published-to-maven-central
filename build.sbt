@@ -1,8 +1,8 @@
 name := "project-published-to-maven-central"
 organization := "com.github.fpopic"
-version := "0.1"
+version := "0.1-SNAPSHOT"
 scalaVersion := "2.12.7"
-
+description := "Demo project for publishing sbt project to maven central repo"
 homepage := Some(url("https://github.com/fpopic/project-published-to-maven-central"))
 
 scmInfo := Some(
@@ -31,4 +31,5 @@ publishTo := Some(
     Opts.resolver.sonatypeStaging
 )
 
+useGpg := true
 pgpReadOnly := false
