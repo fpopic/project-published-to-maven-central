@@ -33,5 +33,7 @@ publishTo := Some(
     Opts.resolver.sonatypeStaging
 )
 
-useGpg := true
-pgpReadOnly := true
+useGpg := false
+usePgpKeyHex(id = "D4EC12FAAE369F81")
+pgpPublicRing := Path.userHome / ".gnupg" / "pubring.gpg"
+pgpSecretRing := Path.userHome / ".gnupg" / "secring.gpg"
