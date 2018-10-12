@@ -34,6 +34,4 @@ publishTo := Some(
 )
 
 useGpg := false
-usePgpKeyHex(id = "D4EC12FAAE369F81")
-pgpPublicRing := Path.userHome / ".gnupg" / "pubring.gpg"
-pgpSecretRing := Path.userHome / ".gnupg" / "secring.gpg"
+pgpSigningKey := Some(0xD4EC12FAAE369F81L)

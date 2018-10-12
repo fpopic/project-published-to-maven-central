@@ -23,22 +23,18 @@ sub   2048R/FD5EC80F 2018-10-11
 
 2. Check if the key is there
 ```
-gpg --list-keys
-```
-
-output:
-```
-/home/fpopic/.gnupg/pubring.gpg
+gpg --keyid-format long -K
+/home/fpopic/.gnupg/secring.gpg
 -------------------------------
-pub   2048R/AE369F81 2018-10-11
-uid                  Filip Popic (for maven) <filip.popic@gmail.com>
-sub   2048R/FD5EC80F 2018-10-11
+sec   2048R/D4EC12FAAE369F81 2018-10-11
+uid                          Filip Popic (for maven) <filip.popic@gmail.com>
+ssb   2048R/B264BDD6FD5EC80F 2018-10-11
 ```
 
 3. Setup build.sbt
-```$xslt
+```
 useGpg := false
-usePgpKeyHex(id = "D4EC12FAAE369F81")
+pgpSigningKey := Some(0xD4EC12FAAE369F81L)
 pgpPublicRing := Path.userHome / ".gnupg" / "pubring.gpg"
 pgpSecretRing := Path.userHome / ".gnupg" / "secring.gpg"
 ```
