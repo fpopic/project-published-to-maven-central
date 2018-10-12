@@ -24,6 +24,9 @@ sub   2048R/FD5EC80F 2018-10-11
 2. Check if the key is there
 ```
 gpg --keyid-format long -K
+```
+Ouput:
+```
 /home/fpopic/.gnupg/secring.gpg
 -------------------------------
 sec   2048R/D4EC12FAAE369F81 2018-10-11
@@ -39,7 +42,13 @@ pgpPublicRing := Path.userHome / ".gnupg" / "pubring.gpg"
 pgpSecretRing := Path.userHome / ".gnupg" / "secring.gpg"
 ```
 
-3. publish localy to your .ivy2 folder 
+4. Publish localy to your .ivy2 folder and then publishSigned
 ```
 PGP_PASS="xxxxxx" sbt publishLocalSigned
+```
+
+5. Download dependency in another sbt project
+```
+resolvers += Opts.resolver.sonatypeSnapshots
+libraryDependencies += "com.github.fpopic" % "project-published-to-maven-central_2.12" % "0.1-SNAPSHOT"
 ```
